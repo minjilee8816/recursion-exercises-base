@@ -1,11 +1,12 @@
 const { getElementById,
         getElementsByClassName,
-        getElementsByTagName } = require('../dominator');
+        getElementsByTagName,
+        flattenTreeToArray } = require('../dominator');
 const fs = require('fs');
 
 describe('dominator', () => {
 
-  beforeEach(() => {
+  beforeEach( () => {
     // load HTML skeleton from disk and parse into the DOM
     const fixturePath = './test/fixtures/sample-page.html';
     const html = fs.readFileSync(fixturePath, 'utf8');
